@@ -1,38 +1,39 @@
-import { ref, computed } from 'vue';
+import { computed, reactive } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useCounterStore = defineStore('counter', () => {
     //STATE
-    const count = ref(0);
-    const min = ref(0);
-    const max = ref(10);
+    const state = reactive({ count: 0, min: -15, max: 30 });
+    // const count = ref(0);
+    // const min = ref(-15);
+    // const max = ref(30);
 
-    //ACTIONS
-    function increaseCount(increaseAmount = 1) {
-        if (count.value + increaseAmount <= max.value) {
-            count.value += increaseAmount;
+    function setCount(amount = 1) {
+        if (amount <= state.max && amount >= state.min) {
+            state.count = amount;
         }
     }
 
-    function decreaseCount(decreaseAmount = 1) {
-        if (count.value - decreaseAmount >= min.value) {
-            count.value = count.value - decreaseAmount;
-        }
-    }
+    // function decreaseCount(decreaseAmount = 1) {
+    //     if (state.count - decreaseAmount >= state.min) {
+    //         state.count = state.count - decreaseAmount;
+    //     }
+    // }
 
-    //GETTERS
-    const oddOrEven = computed(() => (count.value % 2 === 0 ? 'even' : 'odd'));
+    //computed
+    const oddOrEven = computed(() => (state.count % 2 === 0 ? 'even' : 'odd'));
+    const count = computed(() => state.count);
+    const min = computed(() => state.min);
+    const max = computed(() => state.max);
 
     return {
         //STATE
         count,
         min,
         max,
-        //ACTIONS
-        increaseCount,
-        decreaseCount,
-
-        //GETTERS
         oddOrEven,
+
+        setCount,
+        //decreaseCount,
     };
 });

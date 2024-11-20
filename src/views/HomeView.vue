@@ -1,14 +1,34 @@
 <template>
     <div class="home">
-        <h1>{{ counterStore.count }}</h1>
+        <h1>{{ count }}</h1>
         <h2>
-            The counter is: <span>{{ counterStore.oddOrEven }}</span>
+            The counter is: <span>{{ oddOrEven }}</span>
         </h2>
         <div class="buttons">
-            <button class="btn-primary" @click="counterStore.decreaseCount()">-</button>
-            <button class="btn-primary" @click="counterStore.decreaseCount(5)">-5</button>
-            <button class="btn-primary" @click="counterStore.increaseCount()">+</button>
-            <button class="btn-primary" @click="counterStore.increaseCount(5)">+5</button>
+            <button
+                class="btn-primary"
+                @click="counterStore.setCount(count - 1)"
+                :disabled="count <= min">
+                -
+            </button>
+            <button
+                class="btn-primary"
+                @click="counterStore.setCount(count - 5)"
+                :disabled="count - 5 < min">
+                -5
+            </button>
+            <button
+                class="btn-primary"
+                @click="counterStore.setCount(count + 1)"
+                :disabled="count >= max">
+                +
+            </button>
+            <button
+                class="btn-primary"
+                @click="counterStore.setCount(count + 5)"
+                :disabled="count + 5 > max">
+                +5
+            </button>
         </div>
     </div>
     <hr />
@@ -18,8 +38,10 @@
 <script setup>
 import { useCounterStore } from '@/stores/counter';
 import MinMaxDisplayer from '../components/MinMaxDisplayer.vue';
+import { storeToRefs } from 'pinia';
 
 const counterStore = useCounterStore();
+const { count, max, min, oddOrEven } = storeToRefs(counterStore);
 </script>
 
 <style scoped lang="scss">

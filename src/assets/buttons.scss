@@ -13,7 +13,6 @@
     font-size: 2rem;
     &:disabled {
         cursor: not-allowed;
-        pointer-events: none;
     }
 }
 
@@ -43,7 +42,10 @@
     }
 
     &:disabled {
-        text-decoration: line-through;
         background-color: var(--color-background-mute);
+        color: var(--vt-c-white-mute);
+        &::before {
+            opacity: 0;
+        }
     }
 }

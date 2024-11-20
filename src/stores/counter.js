@@ -6,12 +6,12 @@ export const useCounterStore = defineStore('counter', () => {
     const count = ref(0)
 
     //ACTIONS
-    function increaseCount() {
-        count.value++
+    function increaseCount(increaseAmount = 1) {
+        count.value + increaseAmount
     }
 
-    function decreaseCount() {
-        count.value--
+    function decreaseCount(decreaseAmount = 1) {
+        count.value - decreaseAmount
     }
 
     //GETTERS

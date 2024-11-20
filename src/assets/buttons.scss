@@ -11,6 +11,10 @@
     white-space: nowrap;
     cursor: pointer;
     font-size: 2rem;
+    &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
 }
 
 .btn-primary {
@@ -36,5 +40,10 @@
         &::before {
             opacity: 0;
         }
+    }
+
+    &:disabled {
+        text-decoration: line-through;
+        background-color: var(--color-background-mute);
     }
 }

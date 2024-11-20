@@ -7,3 +7,10 @@
         </div>
     </div>
 </template>
+
+<style scoped lang="scss">
+h1,
+button {
+    font-size: 50px;
+}
+</style>

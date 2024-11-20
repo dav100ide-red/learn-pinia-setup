@@ -2,8 +2,10 @@
     <div class="home">
         <h1>{{ counterStore.count }}</h1>
         <div class="buttons">
-            <button class="btn-primary" @click="counterStore.decreaseCount">-</button>
-            <button class="btn-primary" @click="counterStore.increaseCount">+</button>
+            <button class="btn-primary" @click="counterStore.decreaseCount()">-</button>
+            <button class="btn-primary" @click="counterStore.decreaseCount(5)">-5</button>
+            <button class="btn-primary" @click="counterStore.increaseCount()">+</button>
+            <button class="btn-primary" @click="counterStore.increaseCount(5)">+5</button>
         </div>
     </div>
     <hr />

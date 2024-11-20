@@ -7,11 +7,11 @@ export const useCounterStore = defineStore('counter', () => {
 
     //ACTIONS
     function increaseCount(increaseAmount = 1) {
-        count.value + increaseAmount
+        count.value = count.value + increaseAmount
     }
 
     function decreaseCount(decreaseAmount = 1) {
-        count.value - decreaseAmount
+        count.value = count.value - decreaseAmount
     }
 
     //GETTERS

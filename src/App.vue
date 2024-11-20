@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <div class="text-center">
         <nav>
             <span v-for="(link, index) in links" :key="index">
                 <RouterLink :to="link.path">{{ link.label }}</RouterLink>
@@ -19,7 +19,7 @@ const links = [
 </script>
 
 <style scoped>
-.app {
-    text-align: center;
+nav {
+    margin-bottom: 1rem;
 }
 </style>

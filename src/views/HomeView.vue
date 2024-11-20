@@ -35,4 +35,7 @@ h1 {
     gap: 0.3rem;
     justify-content: center;
 }
+span {
+    color: var(--primary);
+}
 </style>

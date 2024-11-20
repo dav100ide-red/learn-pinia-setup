@@ -2,8 +2,8 @@
     <div class="home">
         <h1>{{ count }}</h1>
         <div class="buttons">
-            <button @click="decreaseCount">-</button>
-            <button @click="increaseCount">+</button>
+            <button class="btn-primary" @click="decreaseCount">-</button>
+            <button class="btn-primary" @click="increaseCount">+</button>
         </div>
     </div>
     <hr />
@@ -27,8 +27,12 @@ function decreaseCount() {
 </script>
 
 <style scoped lang="scss">
-h1,
-button {
+h1 {
     font-size: 50px;
+}
+.buttons {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
 }
 </style>

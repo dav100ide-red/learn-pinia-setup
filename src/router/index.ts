@@ -8,7 +8,7 @@ const router = createRouter({
             name: 'home',
             component: () => import('../views/HomeView.vue'),
         },
-        {
+        { //dsad
             path: '/one-btn',
             name: 'one-btn',
             component: () => import('../views/OneBtnView.vue'),

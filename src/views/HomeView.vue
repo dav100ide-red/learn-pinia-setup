@@ -35,7 +35,7 @@
     <MinMaxDisplayer />
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter';
 import MinMaxDisplayer from '../components/MinMaxDisplayer.vue';
 import { storeToRefs } from 'pinia';

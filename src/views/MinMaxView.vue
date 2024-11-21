@@ -2,7 +2,7 @@
     <MinMaxDisplayer />
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import MinMaxDisplayer from '../components/MinMaxDisplayer.vue';
 
 // import { useCounterStore } from '@/stores/counter';

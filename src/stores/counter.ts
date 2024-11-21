@@ -6,7 +6,7 @@ export const useCounterStore = defineStore('counter', () => {
     //STATE
     const state = reactive<CounterState>({ count: 0, min: -15, max: 30 });
 
-    function setCount(amount = 1) {
+    function setCount(amount = 1): void {
         if (amount <= state.max && amount >= state.min) {
             state.count = amount;
         }

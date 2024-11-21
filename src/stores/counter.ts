@@ -21,8 +21,8 @@ export const useCounterStore = defineStore('counter', () => {
     return {
         count,
         // esporto solo i computed e NON lo state perche' cosi' ottengo l'one-way data-binding,
-        // poiche' i computed non posso riassegnati
-        //mantendo la logica centralizzata nello store
+        // poiche' i computed non possono essere riassegnati
+        //mantengo la logica centralizzata nello store
         min,
         max,
         oddOrEven,

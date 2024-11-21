@@ -2,7 +2,7 @@
     <div class="home">
         <h1>{{ count }}</h1>
         <h2>
-            The counter is: <span>{{ oddOrEven }}</span>
+            The counter is: <span class="text-primary">{{ oddOrEven }}</span>
         </h2>
         <div class="buttons">
             <button
@@ -55,8 +55,5 @@ h2 {
     display: flex;
     gap: 0.3rem;
     justify-content: center;
-}
-span {
-    color: var(--primary);
 }
 </style>

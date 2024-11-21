@@ -13,9 +13,9 @@
 <script setup lang="ts">
 const links = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
+    { label: 'One Btn', path: '/one-btn' },
     { label: 'Min & Max', path: '/min-max' },
-]
+];
 </script>
 
 <style scoped>

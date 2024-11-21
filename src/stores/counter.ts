@@ -1,6 +1,6 @@
 import { computed, reactive } from 'vue';
 import { defineStore } from 'pinia';
-import { CounterState } from '../types/counter.type';
+import type { CounterState } from '@/types/counter.type';
 
 export const useCounterStore = defineStore('counter', () => {
     //STATE

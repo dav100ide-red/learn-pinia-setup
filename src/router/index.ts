@@ -18,6 +18,15 @@ const router = createRouter({
             name: 'min-max',
             component: () => import('../views/MinMaxView.vue'),
         },
+        {
+            path: '/:pathMatch(.*)*',
+            redirect: { name: 'not-found' },
+        },
+        {
+            path: '/not-found',
+            name: 'not-found',
+            component: () => import('../views/NotFoundView.vue'),
+        },
     ],
 });
 

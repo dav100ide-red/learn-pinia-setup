@@ -11,7 +11,7 @@ const router = createRouter({
         {
             path: '/one-btn',
             name: 'one-btn',
-            component: () => import('../views/AboutView.vue'),
+            component: () => import('../views/OneBtnView.vue'),
         },
         {
             path: '/min-max',

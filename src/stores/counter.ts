@@ -12,19 +12,20 @@ export const useCounterStore = defineStore('counter', () => {
         }
     }
 
-    const oddOrEven = computed(() => (state.count % 2 === 0 ? 'even' : 'odd'));
-
     const count = computed<number>(() => state.count);
     const min = computed<number>(() => state.min);
     const max = computed<number>(() => state.max);
 
+    const oddOrEven = computed(() => (state.count % 2 === 0 ? 'even' : 'odd'));
+
     return {
-        count,
         // esporto solo i computed e NON lo state perche' cosi' ottengo l'one-way data-binding,
         // poiche' i computed non possono essere riassegnati
         //mantengo la logica centralizzata nello store
+        count,
         min,
         max,
+
         oddOrEven,
 
         setCount,

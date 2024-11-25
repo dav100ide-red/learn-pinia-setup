@@ -13,9 +13,9 @@
             </button>
             <button
                 class="btn-primary"
-                @click="counterStore.setCount(count - 5)"
-                :disabled="count - 5 < min">
-                -5
+                @click="counterStore.setCount(count - offsetter)"
+                :disabled="count - offsetter < min">
+                -{{ offsetter }}
             </button>
             <button
                 class="btn-primary"
@@ -25,9 +25,9 @@
             </button>
             <button
                 class="btn-primary"
-                @click="counterStore.setCount(count + 5)"
-                :disabled="count + 5 > max">
-                +5
+                @click="counterStore.setCount(count + offsetter)"
+                :disabled="count + offsetter > max">
+                +{{ offsetter }}
             </button>
         </div>
     </div>
@@ -39,14 +39,16 @@
 import { useCounterStore } from '@/stores/counter';
 import MinMaxDisplayer from '../components/MinMaxDisplayer.vue';
 import { storeToRefs } from 'pinia';
+import { COUNTER_OFFSETTER } from '@/constants/counter-offsetter.const';
 
 const counterStore = useCounterStore();
 const { count, max, min, oddOrEven } = storeToRefs(counterStore);
+const offsetter = COUNTER_OFFSETTER;
 </script>
 
 <style scoped lang="scss">
 h1 {
-    font-size: 50px;
+    font-size: offsetter0px;
 }
 h2 {
     margin-bottom: 1rem;

@@ -1,4 +1,4 @@
-import { computed, reactive } from 'vue';
+import { computed, reactive, readonly, ref } from 'vue';
 import { defineStore } from 'pinia';
 import type { CounterState } from '@/types/counter.type';
 
@@ -11,6 +11,20 @@ export const useCounterStore = defineStore('counter', () => {
             state.count = amount;
         }
     }
+
+    function setMax(amount: number) {
+        if (amount > state.min) {
+            state.max = amount;
+        }
+    }
+
+    function setMin(amount: number) {
+        if (amount < state.max) {
+            state.min = amount;
+        }
+    }
+
+    const COUNTER_OFFSETTER = readonly(ref(5));
 
     const count = computed<number>(() => state.count);
     const min = computed<number>(() => state.min);
@@ -27,6 +41,8 @@ export const useCounterStore = defineStore('counter', () => {
         max,
 
         oddOrEven,
+
+        COUNTER_OFFSETTER,
 
         setCount,
     };

@@ -6,11 +6,14 @@
                 <span v-if="index < links.length - 1"> | </span>
             </span>
         </nav>
+        <Notifications />
         <RouterView />
     </div>
 </template>
 
 <script setup lang="ts">
+import Notifications from './components/Notifications.vue';
+
 const links = [
     { label: 'Home', path: '/' },
     { label: 'One Btn', path: '/one-btn' },

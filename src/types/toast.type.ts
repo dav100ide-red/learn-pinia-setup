@@ -1,7 +1,7 @@
 export type Status = 'success' | 'error' | 'info' | 'warning';
 
 export type Toast = {
-    icon: string;
+    //ui
     text: string;
     status: Status;
 };

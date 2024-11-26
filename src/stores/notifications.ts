@@ -8,9 +8,20 @@ export const useNotificationsStore = defineStore('notifications', () => {
         toasts: [],
     });
 
-    const toasts = computed<Toast[]>(() => state.toasts);
+    const toasts = computed(() => state.toasts);
+
+    function deleteToast(index: number) {
+        state.toasts = state.toasts.slice(index);
+    }
+
+    function addToast(toast: Toast) {
+        state.toasts.push(toast);
+    }
 
     return {
         toasts,
+
+        addToast,
+        deleteToast,
     };
 });

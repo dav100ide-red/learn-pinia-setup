@@ -22,6 +22,7 @@ const counterStore = useCounterStore();
 const { max, min, count } = storeToRefs(counterStore);
 
 const notificationsStore = useNotificationsStore();
+const { toasts } = notificationsStore;
 
 const form = {
     min: min.value,
@@ -34,11 +35,12 @@ function handleSubmit() {
         { condition: form.min > count.value, message: 'Min must be smaller than count' },
         { condition: form.max < count.value, message: 'Max must be greater than count' },
     ];
+    const toastId = toasts.length + 1;
 
     // Controlla e invia il messaggio d'errore se necessario
     const error = errorMessages.find((error) => error.condition);
     if (error) {
-        notificationsStore.addToast({ status: 'error', text: error.message });
+        notificationsStore.addToast({ status: 'error', text: error.message, id: toastId });
         return;
     }
 
@@ -47,13 +49,18 @@ function handleSubmit() {
         notificationsStore.addToast({
             status: 'warning',
             text: 'Please change at least one value',
+            id: toastId,
         });
         return;
     }
 
     setMinMax();
 
-    notificationsStore.addToast({ status: 'success', text: 'Min & Max updated successfully' });
+    notificationsStore.addToast({
+        status: 'success',
+        text: 'Min & Max updated successfully',
+        id: toastId,
+    });
 }
 
 function setMinMax() {

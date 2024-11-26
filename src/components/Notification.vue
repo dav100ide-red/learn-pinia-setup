@@ -13,10 +13,11 @@ import { useNotificationsStore } from '@/stores/notifications';
 import type { Status, Toast } from '@/types/toast.type';
 import { ref } from 'vue';
 
-defineProps<{ toast: Toast }>();
+const props = defineProps<{ toast: Toast }>();
 const emit = defineEmits(['close-toast']);
 const isHidden = ref(false);
 function hide() {
+    console.log(props.toast);
     isHidden.value = true;
     emit('close-toast');
 }

@@ -11,7 +11,7 @@ export const useNotificationsStore = defineStore('notifications', () => {
     const toasts = computed(() => state.toasts);
 
     function deleteToast(index: number) {
-        state.toasts = state.toasts.slice(index);
+        state.toasts = state.toasts.filter((t) => t.id !== index);
     }
 
     function addToast(toast: Toast) {

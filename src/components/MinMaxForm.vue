@@ -30,14 +30,11 @@ const form = {
 
 function setMinMax() {
     if (form.min > form.max) {
-        errorMessage.value = 'Min must be greater than Max!';
         return;
     }
     counterStore.setMax(form.max);
     counterStore.setMin(form.min);
 }
-
-const errorMessage = ref('test jad spodsajiadsio');
 </script>
 
 <style lang="scss" scoped>

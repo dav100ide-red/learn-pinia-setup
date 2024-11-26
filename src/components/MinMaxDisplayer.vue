@@ -11,8 +11,11 @@
 
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter';
+import { storeToRefs } from 'pinia';
 
-const { max, min } = useCounterStore();
+const counterStore = useCounterStore();
+
+const { max, min } = storeToRefs(counterStore);
 </script>
 
 <style lang="scss" scoped>

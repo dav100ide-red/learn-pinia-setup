@@ -45,5 +45,7 @@ export const useCounterStore = defineStore('counter', () => {
         COUNTER_OFFSETTER,
 
         setCount,
+        setMax,
+        setMin,
     };
 });

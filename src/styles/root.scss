@@ -1,17 +1,20 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
     --white: #ffffff;
-    --white-soft: #f8f8f8;
-    --white-mute: #f2f2f2;
+
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
 
     --black: #181818;
     --black-soft: #222222;
     --black-mute: #282828;
-
-    --text-light-1: var(--indigo);
-    --text-light-2: rgba(60, 60, 60, 0.66);
-    --text-dark-1: var(--white);
-    --text-dark-2: rgba(235, 235, 235, 0.64);
 
     --primary-200: rgb(77, 253, 194);
     --primary: hsla(160, 100%, 37%, 1);
@@ -25,19 +28,9 @@
 
 /* semantic color variables for this project */
 :root {
-    --color-background: var(--white);
-    --color-background-soft: var(--white-soft);
-    --color-background-mute: var(--white-mute);
+    --color-background: var(--black);
+    --color-background-soft: var(--black-soft);
+    --color-background-mute: var(--black-mute);
 
-    --color-text: var(--text-light-1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: var(--black);
-        --color-background-soft: var(--black-soft);
-        --color-background-mute: var(--black-mute);
-
-        --color-text: var(--text-dark-2);
-    }
+    --color-text: var(--gray-200);
 }

@@ -43,7 +43,7 @@
 
     &:disabled {
         background-color: var(--color-background-mute);
-        color: var(--white-mute);
+        color: var(--gray-300);
         &::before {
             opacity: 0;
         }

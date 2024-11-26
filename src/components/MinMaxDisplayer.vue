@@ -1,6 +1,9 @@
 <template>
     <div class="min-max-displayer">
         <p>
+            Count: <span class="text-primary">{{ count }}</span>
+        </p>
+        <p>
             Minimun Value: <span class="text-primary">{{ min }}</span>
         </p>
         <p>
@@ -15,7 +18,7 @@ import { storeToRefs } from 'pinia';
 
 const counterStore = useCounterStore();
 
-const { max, min } = storeToRefs(counterStore);
+const { max, min, count } = storeToRefs(counterStore);
 </script>
 
 <style lang="scss" scoped>

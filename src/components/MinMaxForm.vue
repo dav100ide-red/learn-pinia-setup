@@ -1,17 +1,16 @@
 <template>
-    <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
-    <form @submit.prevent="setMinMax()">
+    <form class="min-max-form" @submit.prevent="setMinMax()">
         <label>
             Min
-            <input v-model="form.min" type="number" />
+            <input v-model="form.min" type="number" placeholder="Insert min" />
         </label>
         <label>
             Max
-            <input v-model="form.max" type="number" />
+            <input v-model="form.max" type="number" placeholder="Insert max" />
         </label>
         <!-- Error message -->
 
-        <button class="btn-primary" type="submit">Confirm</button>
+        <button class="btn-primary" type="submit">Set New Values</button>
     </form>
 </template>
 
@@ -41,13 +40,8 @@ function setMinMax() {
 const errorMessage = ref('test jad spodsajiadsio');
 </script>
 
-<style lang="scss">
-.error {
-    position: fixed;
-    top: 3rem;
-    left: 50%;
-    translate: -50%;
-    color: red;
-    font-size: 0.9rem;
+<style lang="scss" scoped>
+.min-max-form {
+    margin-top: 2rem;
 }
 </style>

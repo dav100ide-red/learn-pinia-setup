@@ -19,7 +19,7 @@
 .btn-primary {
     @extend %btn;
     box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-    color: var(--vt-c-white);
+    color: var(--white);
     border: 0;
     position: relative;
     background-color: var(--primary-200);
@@ -43,7 +43,7 @@
 
     &:disabled {
         background-color: var(--color-background-mute);
-        color: var(--vt-c-white-mute);
+        color: var(--white-mute);
         &::before {
             opacity: 0;
         }

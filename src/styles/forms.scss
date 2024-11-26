@@ -1,0 +1,35 @@
+form {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    label {
+        font-weight: bold;
+        color: var(--white);
+    }
+    input {
+        background-color: var(--color-background-soft);
+        color: var(--white-soft);
+        font-size: inherit;
+        margin-inline-start: 0.5rem;
+        padding: 0.8rem 1rem;
+
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: border-color linear 300ms;
+
+        &::placeholder {
+            color: var(--divider-dark-1);
+            font-style: italic;
+        }
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            border-color: v;
+        }
+        &.error {
+        }
+    }
+}

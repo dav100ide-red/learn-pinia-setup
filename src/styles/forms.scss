@@ -17,18 +17,28 @@ form {
 
         border-radius: 10px;
         border: 1px solid transparent;
-        transition: border-color linear 300ms;
+        transition: border-color ease-in 200ms;
 
         &::placeholder {
             font-style: italic;
         }
+
+        &:hover {
+            border-color: var(--gray-500);
+        }
         &:focus {
             outline: none;
+            border-color: var(--primary);
         }
-        &:hover {
-            border-color: v;
+
+        //---------------browser specifics------------------------------
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
-        &.error {
+        &[type='number'] {
+            -moz-appearance: textfield;
         }
     }
 }

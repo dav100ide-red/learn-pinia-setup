@@ -10,7 +10,7 @@
         </label>
         <!-- Error message -->
 
-        <button class="btn-primary" type="submit">Set New Values</button>
+        <button class="btn-primary" type="submit">Set Min & Max</button>
     </form>
 </template>
 

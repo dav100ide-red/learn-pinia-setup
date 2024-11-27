@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-// import Notifications from './components/Notifications.vue';
 import Toast from 'primevue/toast';
 
 const links = [

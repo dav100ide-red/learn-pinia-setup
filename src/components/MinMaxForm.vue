@@ -15,14 +15,12 @@
 
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter';
-import { useNotificationsStore } from '@/stores/notifications';
 import { storeToRefs } from 'pinia';
 
 const counterStore = useCounterStore();
 const { max, min, count } = storeToRefs(counterStore);
-
-const notificationsStore = useNotificationsStore();
-const { toasts } = notificationsStore;
+import { useToast } from 'primevue';
+const toast = useToast();
 
 const form = {
     min: min.value,
@@ -35,31 +33,32 @@ function handleSubmit() {
         { condition: form.min > count.value, message: 'Min must be smaller than count' },
         { condition: form.max < count.value, message: 'Max must be greater than count' },
     ];
-    const toastId = toasts.length + 1;
 
     // Controlla e invia il messaggio d'errore se necessario
     const error = errorMessages.find((error) => error.condition);
     if (error) {
-        notificationsStore.addToast({ status: 'error', text: error.message, id: toastId });
+        toast.add({ severity: 'error', summary: 'Error', detail: error.message, life: 3000 });
         return;
     }
 
     const sameValsAsBefore = form.min === min.value && form.max === max.value;
     if (sameValsAsBefore) {
-        notificationsStore.addToast({
-            status: 'warning',
-            text: 'Please change at least one value',
-            id: toastId,
+        toast.add({
+            severity: 'warn',
+            summary: 'Warning',
+            detail: 'Please change at least one value',
+            life: 3000,
         });
         return;
     }
 
     setMinMax();
 
-    notificationsStore.addToast({
-        status: 'success',
-        text: 'Min & Max updated successfully',
-        id: toastId,
+    toast.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Min & Max updated successfully',
+        life: 3000,
     });
 }
 

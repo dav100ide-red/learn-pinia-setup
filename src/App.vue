@@ -1,4 +1,5 @@
 <template>
+    <Toast />
     <div class="text-center">
         <nav>
             <span v-for="(link, index) in links" :key="index">
@@ -6,13 +7,13 @@
                 <span v-if="index < links.length - 1"> | </span>
             </span>
         </nav>
-        <Notifications />
         <RouterView />
     </div>
 </template>
 
 <script setup lang="ts">
-import Notifications from './components/Notifications.vue';
+// import Notifications from './components/Notifications.vue';
+import Toast from 'primevue/toast';
 
 const links = [
     { label: 'Home', path: '/' },

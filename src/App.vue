@@ -12,8 +12,11 @@
 </template>
 
 <script setup lang="ts">
-// import Notifications from './components/Notifications.vue';
 import Toast from 'primevue/toast';
+import { useCounterStore } from './stores/counter';
+
+const counterStore = useCounterStore();
+counterStore.fetchCounterState();
 
 const links = [
     { label: 'Home', path: '/' },

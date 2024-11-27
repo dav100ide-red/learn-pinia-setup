@@ -52,7 +52,7 @@ function handleSubmit() {
         return;
     }
 
-    setMinMax();
+    counterStore.setMaxMin(form.max, form.min);
 
     toast.add({
         severity: 'success',
@@ -60,11 +60,6 @@ function handleSubmit() {
         detail: 'Min & Max updated successfully',
         life: 3000,
     });
-}
-
-function setMinMax() {
-    counterStore.setMax(form.max);
-    counterStore.setMin(form.min);
 }
 </script>
 
